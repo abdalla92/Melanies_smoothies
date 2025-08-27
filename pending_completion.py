@@ -10,7 +10,6 @@ st.title(f":cup_with_straw: Pending Smoothie Orders :cup_with_straw:")
 st.write("""Orders that need to be filled""")
 
 
-session = get_active_session()
 my_dataframe = session.table("smoothies.public.orders").filter(col("ORDER_FILLED")==0).collect()
 #st.dataframe(data=my_dataframe, use_container_width=True)
 if my_dataframe:
