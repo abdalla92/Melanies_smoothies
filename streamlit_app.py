@@ -7,7 +7,8 @@ from snowflake.snowpark.functions import col
 
 import requests
 smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
-smoothie_froot = st.text(smoothiefroot_response.json())
+st.text(smoothiefroot_response.json())
+smoothie_froot = smoothiefroot_response.json()
 smoothie_froot_df = st.dataframe(data=smoothie_froot, use_container_width=True)
 
 # Write directly to the app
